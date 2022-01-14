@@ -1,4 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
 }
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    /* max-width: 1440px; */
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
