@@ -1,14 +1,29 @@
+:root {
+    --color-gold: #bdae82;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --font1: 60px;
+    --font2: 40px;
+    --font3: 20px;
+    --font4: 18px;
+}
+
 * {
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    font-family: 'Merriweather', serif;
+html {
+    scroll-behavior: smooth;
 }
 
-a {
-    text-decoration: none;
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--font3);
+    line-height: 50px;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -16,4 +31,197 @@ a {
     width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
-  }
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+h1, h2 {
+    font-family: 'Merriweather', serif;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('../assets/img/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.header-logo {
+    width: 50px;
+    height: 50px;
+    background-image: url('../assets/svg/header-logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+.header-logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.header-nav {
+    margin-left: auto;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+.header-nav a {
+    transition: 0.3s;
+}
+
+.header-nav a:hover {
+    color: var(--color-gold);
+}
+
+.nav-link {
+    font-size: 20px;
+    line-height: 50px;
+    padding: 0 15px;
+    line-height: 50px;
+    transition: 0.3s;
+}
+
+.header-languages {
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.header-en {
+    color: var(--color-gold);
+    margin-right: 10px;
+}
+
+.header-ru {
+    margin-left: 10px;
+}
+
+.section-hero {
+    background-image: url('../assets/img/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center -90px;
+    padding: 160px 60px 330px;
+}
+
+.title {
+    font-size: var(--font1);
+    line-height: 120px;
+    margin-bottom: 10px;
+}
+
+.hero-description,
+.button  {
+    line-height: 40px;
+}
+
+.button {
+    border: 0;
+    background-color: var(--color-gold);
+    font-size: inherit;
+    padding: 8px 75px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+
+.section {
+    padding-top: 100px;
+}
+
+.wrapper-section-title {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+.section-title {
+    font-size: var(--font2);
+    line-height: 80px;
+    padding-bottom: 60px;
+}
+
+.section-title-elem {
+    position: relative;
+}
+
+.section-title-elem::before, .section-title-elem::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-gold);
+    width: 60%;
+    height: 2px;
+    top: 27%;
+}
+
+.section-title-elem::before {
+    left: -21%;
+}
+
+.section-title-elem::after {
+    right: -21%;
+}
+
+.skills-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skill-item {
+    width: 23%;
+    padding: 100px 20px 8px;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+  
+.skill-item:nth-child(1) {
+    background-image: url(../assets/svg/skills-camera.svg);
+    background-size: 62px 50px;
+}
+
+.skill-item:nth-child(2) {
+    background-image: url(../assets/svg/skills-video.svg);
+    background-size: 60px 50px;
+}
+
+.skill-item:nth-child(3) {
+    background-image: url(../assets/svg/skills-image.svg);
+    background-size: 66px 50px;
+}
+
+.skill-item:nth-child(4) {
+    background-image: url(../assets/svg/skills-mic.svg);
+    background-size: 32px 50px;
+}
+
+.skill-title {
+    font-size: var(--font3);
+    line-height: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.skill-subtitle {
+    font-size: var(--font4);
+    line-height: 36px;
+    text-align: center;
+}
