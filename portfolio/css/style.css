@@ -342,7 +342,7 @@ h1, h2, h3 {
 
 .container-contacts {
     background-image: url(../assets/img/contacts-bg.jpg);
-    background-size: cover;
+    background-size: auto 700px;
     background-position: center center;
     background-repeat: no-repeat;
 }
