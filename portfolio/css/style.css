@@ -122,6 +122,10 @@ h1, h2, h3 {
     margin-bottom: 10px;
 }
 
+.hero-description {
+    padding-bottom: 25px;
+}
+
 .hero-description,
 .button  {
     line-height: 40px;
@@ -131,8 +135,8 @@ h1, h2, h3 {
     border: 0;
     background-color: var(--color-gold);
     font-size: inherit;
-    padding: 8px 75px;
-    margin-top: 25px;
+    width: 220px;
+    height: 55px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -224,4 +228,48 @@ h1, h2, h3 {
     font-size: var(--font4);
     line-height: 36px;
     text-align: center;
+}
+
+.section-title-elem-portfolio::before {
+    left: -26%;
+}
+
+.section-title-elem-portfolio::after {
+    right: -25%;
+}
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding-bottom: 60px;
+}
+
+.button-unvisited  {
+    border: 2px solid var(--color-gold);
+    background-color: var(--color-black);
+    color: var(--color-gold);
+    font-size: inherit;
+    line-height: 40px;
+    width: 220px;
+    height: 55px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-unvisited:hover {
+    color: var(--color-white);
+}
+
+#portfolio .button:hover {
+ transform: scale(1);
+}
+
+.portfolio-images {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
 }
