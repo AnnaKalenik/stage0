@@ -26,10 +26,14 @@ body {
     padding: 0;
 }
 
-.container {
+.container,
+.container-conacts {
     /* max-width: 1440px; */
     width: 1440px;
     margin: 0 auto;
+}
+
+.container {
     padding: 0 20px;
 }
 
@@ -159,6 +163,7 @@ h1, h2, h3 {
 
 .section-title {
     font-size: var(--font2);
+    color: var(--color-gold);
     line-height: 80px;
     padding-bottom: 60px;
 }
@@ -295,6 +300,10 @@ h1, h2, h3 {
     transform: scale(1.1);
 }
 
+.section-price {
+    padding-bottom: 100px;
+}
+
 .price-list {
     display: flex;
     flex-wrap: wrap;
@@ -304,7 +313,7 @@ h1, h2, h3 {
 
 .price-card {
     text-align: center;
-    border: 2px solid var(--color-gold);
+    border: 3px solid var(--color-gold);
     padding: 40px 113px;
 }
 
@@ -333,4 +342,52 @@ h1, h2, h3 {
     display: block;
     font-size: var(--font4);
     line-height: 36px;
+}
+
+.section-contacts {
+    background-image: url(../assets/img/contacts-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: flex-end;
+    padding: 60px 20px 195px;
+}
+
+.section-title-contacts {
+    padding-bottom: 40px;
+}
+
+.contacts-form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    width: 450px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--color-gold);
+    box-sizing: border-box;
+    padding: 17px 20px 15px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--font3);
+    font-weight: normal;
+    line-height: 40px;
+    color: var(--color-gold);
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+    padding-top: 5px;
+    margin-bottom: 30px;
 }
