@@ -273,3 +273,24 @@ h1, h2, h3 {
     flex-wrap: wrap;
     gap: 25px;
 }
+
+.video-player {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-play {
+    width: 130px;
+    height: 130px;
+    background-image: url(../assets/svg/video-button.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: 0.3s;
+}
+
+.button-play:hover {
+    transform: scale(1.1);
+}
