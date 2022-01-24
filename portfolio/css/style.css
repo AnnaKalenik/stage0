@@ -3,9 +3,19 @@
     --color-black: #000000;
     --color-white: #ffffff;
     --font1: 60px;
+    --line-height1: 120px;
     --font2: 40px;
+    --line-height2: 80px;
     --font3: 20px;
+    --line-height3: 50px;
     --font4: 18px;
+    --line-height4: 36px;
+    --font5: 24px;
+    --line-height5: 48px;
+    --font6: 28px;
+    --line-height6: 56px;
+    --line-height7: 40px;
+    --line-height8: 35px;
 }
 
 * {
@@ -19,7 +29,7 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     font-size: var(--font3);
-    line-height: 50px;
+    line-height: var(--line-height3);
     color: var(--color-white);
     background-color: var(--color-black);
     margin: 0;
@@ -28,7 +38,6 @@ body {
 
 .container {
     max-width: 1440px;
-    /* width: 1440px; */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -63,7 +72,7 @@ h1, h2, h3 {
     background-image: url('../assets/svg/header-logo.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    transition: 0.3s;
+    transition: all 0.3s;
 }
 
 .header-logo:hover {
@@ -90,10 +99,9 @@ h1, h2, h3 {
 }
 
 .nav-link {
-    font-size: 20px;
-    line-height: 50px;
+    font-size: var(--font3);
+    line-height: var(--line-height3);
     padding: 0 15px;
-    line-height: 50px;
     transition: all 0.3s;
 }
 
@@ -120,7 +128,7 @@ h1, h2, h3 {
 
 .button-en {
     margin-right: 4px;
-    color: var(--color-gold);      /* <-- Удалить при добавлении скрипта !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    color: var(--color-gold); /* <-- Удалить при добавлении скрипта !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 }
 .button-ru {
     margin-left: 4px;
@@ -136,7 +144,7 @@ h1, h2, h3 {
 
 .title {
     font-size: var(--font1);
-    line-height: 120px;
+    line-height: var(--line-height1);
     margin-bottom: 10px;
 }
 
@@ -146,7 +154,7 @@ h1, h2, h3 {
 
 .hero-description,
 .button  {
-    line-height: 40px;
+    line-height: var(--line-height7);
 }
 
 .button {
@@ -179,7 +187,7 @@ h1, h2, h3 {
 .section-title {
     font-size: var(--font2);
     color: var(--color-gold);
-    line-height: 80px;
+    line-height: var(--line-height2);
     padding-bottom: 60px;
 }
 
@@ -240,14 +248,14 @@ h1, h2, h3 {
 
 .skill-title {
     font-size: var(--font3);
-    line-height: 40px;
+    line-height: var(--line-height7);
     padding-bottom: 20px;
     text-align: center;
 }
 
 .skill-subtitle {
     font-size: var(--font4);
-    line-height: 36px;
+    line-height: var(--line-height4);
     text-align: center;
 }
 
@@ -273,7 +281,7 @@ h1, h2, h3 {
     background-color: var(--color-black);
     color: var(--color-gold);
     font-size: inherit;
-    line-height: 40px;
+    line-height: var(--line-height7);
     width: 220px;
     height: 55px;
     cursor: pointer;
@@ -285,7 +293,7 @@ h1, h2, h3 {
 }
 
 #portfolio .button:hover {
- transform: scale(1);
+    transform: scale(1);
 }
 
 .portfolio-images {
@@ -343,14 +351,14 @@ h1, h2, h3 {
 }
 
 .price-card-title {
-    font-size: 28px;
-    line-height: 56px;
+    font-size: var(--font6);
+    line-height: var(--line-height6);
     padding-bottom: 20px;
 }
 
 .price-value {
-    font-size: 24px;
-    line-height: 48px;
+    font-size: var(--font5);
+    line-height: var(--line-height5);
     color: var(--color-gold);
     padding-bottom: 20px;
 }
@@ -361,7 +369,7 @@ h1, h2, h3 {
 .price-description-item {
     display: block;
     font-size: var(--font4);
-    line-height: 36px;
+    line-height: var(--line-height4);
 }
 
 /* Contacts */
@@ -405,7 +413,7 @@ textarea::placeholder {
     font-family: 'Inter', sans-serif;
     font-size: var(--font3);
     font-weight: normal;
-    line-height: 35px;
+    line-height: var(--line-height8);
     color: var(--color-gold);
 }
 
