@@ -276,7 +276,7 @@ h1, h2, h3 {
     right: -25%;
 }
 
-.container-buttons {
+.portfolio-buttons {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -285,7 +285,7 @@ h1, h2, h3 {
     padding-bottom: 60px;
 }
 
-.button-unvisited  {
+.portfolio-btn  {
     border: 2px solid var(--color-gold);
     background-color: var(--color-black);
     color: var(--color-gold);
@@ -297,12 +297,20 @@ h1, h2, h3 {
     transition: 0.3s;
 }
 
-.button-unvisited:hover {
+.portfolio-btn:hover {
     color: var(--color-white);
+    transform: scale(1);
 }
 
-#portfolio .button:hover {
-    transform: scale(1);
+.portfolio-btn.active {
+    border: 0;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    font-size: inherit;
+    width: 220px;
+    height: 55px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 .portfolio-images {
