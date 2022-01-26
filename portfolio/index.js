@@ -6,23 +6,26 @@ const headerNav = document.querySelector('.header-nav');
 const navLinks = document.querySelectorAll('.nav-link');
 
 const portfolioBtnsContainer = document.querySelector('.portfolio-buttons');
-const portfolioBtn = document.querySelector('.portfolio-btn');
 const portfolioBtns = document.querySelectorAll('.portfolio-btn');
 const portfolioImages = document.querySelectorAll('.portfolio-img');
 
-hamburger.addEventListener('click', () => {
+//Menu-burger
+function toogleClassOpen () {
     hamburger.classList.toggle('open');
     headerNav.classList.toggle('open');
     headerContainer.classList.toggle('open');
-});
+}
+hamburger.addEventListener('click', toogleClassOpen);
 
-navLinks.forEach((el) => el.addEventListener('click', (event) => {
+function removeClassOpen (event) {
     if (event.target.classList.contains('nav-link')) {
         hamburger.classList.remove('open');
         headerNav.classList.remove('open');
     }
-}));
+}
+navLinks.forEach((link) => link.addEventListener('click', removeClassOpen));
 
+// Changing images in the portfolio section
 function changeImage (event) {
     if (event.target.classList.contains('portfolio-btn')) {
         let dataSeason = event.target.dataset.season;
@@ -32,5 +35,5 @@ function changeImage (event) {
         event.target.classList.add('active');
     }
 }
-
 portfolioBtnsContainer.addEventListener('click', changeImage);
+
