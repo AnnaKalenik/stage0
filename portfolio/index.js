@@ -3,7 +3,12 @@ console.log ('1.Вёрстка соответствует макету. Шири
 const hamburger = document.querySelector('.header-hamburger');
 const headerContainer = document.querySelector('.header-container');
 const headerNav = document.querySelector('.header-nav');
-const navLinks = document.querySelectorAll('.nav-link'); 
+const navLinks = document.querySelectorAll('.nav-link');
+
+const portfolioBtnsContainer = document.querySelector('.portfolio-buttons');
+const portfolioBtn = document.querySelector('.portfolio-btn');
+const portfolioBtns = document.querySelectorAll('.portfolio-btn');
+const portfolioImages = document.querySelectorAll('.portfolio-img');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
@@ -16,4 +21,16 @@ navLinks.forEach((el) => el.addEventListener('click', (event) => {
         hamburger.classList.remove('open');
         headerNav.classList.remove('open');
     }
-}))
+}));
+
+function changeImage (event) {
+    if (event.target.classList.contains('portfolio-btn')) {
+        let dataSeason = event.target.dataset.season;
+        portfolioImages.forEach((img, index) => img.src = `./assets/img/${dataSeason}/${index + 1}.jpg`);
+
+        portfolioBtns.forEach((btn) => btn.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+}
+
+portfolioBtnsContainer.addEventListener('click', changeImage);
