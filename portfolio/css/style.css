@@ -122,14 +122,15 @@ h1, h2, h3 {
     transition: all 0.3s;
 }
 
-.header-button:hover {
+.header-button:hover,
+.header-button.active {
     color: var(--color-gold);
 }
 
 .button-en {
     margin-right: 4px;
-    color: var(--color-gold); /* <-- Удалить при добавлении скрипта !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 }
+
 .button-ru {
     margin-left: 4px;
 }
