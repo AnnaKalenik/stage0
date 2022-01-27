@@ -18,6 +18,19 @@ const headerLangContainer = document.querySelector('.header-languages');
 const dataArr = document.querySelectorAll('[data-i18]');
 const btnsLanguage = document.querySelectorAll('.header-button');
 
+// constants for change theme
+const headerLogo = document.querySelector('.header-logo');
+const headerBtnToogleTheme = document.querySelector('.header-button-theme');
+const headerImgBg = document.querySelector('.header-container');
+const heroImgBg = document.querySelector('.hero-container');
+const heroBtn = document.querySelector('.hero-button');
+const contactsImgBg = document.querySelector('.container-contacts');
+const contactsBtn = document.querySelector('.contacts-button');
+const elemArr = [headerLogo, headerBtnToogleTheme, headerImgBg, heroImgBg, heroBtn, contactsImgBg, contactsBtn];
+
+const priceBtns = document.querySelectorAll('.price-button');
+const footerBtns = document.querySelectorAll('.footer-item');
+
 //MENU-BURGER
 function toogleClassOpen () {
     hamburger.classList.toggle('open');
@@ -30,13 +43,14 @@ function removeClassOpen (event) {
     if (event.target.classList.contains('nav-link')) {
         hamburger.classList.remove('open');
         headerNav.classList.remove('open');
+        headerContainer.classList.remove('open');
     }
 }
 navLinks.forEach((link) => link.addEventListener('click', removeClassOpen));
 
 // ADD CLASS 'active'
-function changeClassActive (event, elementsContainer) {
-    elementsContainer.forEach((elem) => elem.classList.remove('active'));
+function changeClassActive (event, arrElements) {
+    arrElements.forEach((elem) => elem.classList.remove('active'));
     event.target.classList.add('active');
 }
 
@@ -68,3 +82,30 @@ function getTranslate (event) {
     }
 }
 headerLangContainer.addEventListener('click', getTranslate);
+
+// CHANGE THEME
+function changeTheme (event) {
+    if (event.target.classList.contains('night')) {
+        document.documentElement.style.setProperty('--color-body', '#ffffff');
+        document.documentElement.style.setProperty('--color-text', '#1C1C1C');
+        document.documentElement.style.setProperty('--color-text-section', '#1C1C1C');
+        document.documentElement.style.setProperty('--color-hover-header', '#ffffff');
+        document.documentElement.style.setProperty('--color-line-title', '#1C1C1C');
+        document.documentElement.style.setProperty('--color-input-bg', 'rgba(255, 255, 255, 0.5)');   
+    } else {
+        document.documentElement.style.setProperty('--color-body', '#000000');
+        document.documentElement.style.setProperty('--color-text', '#ffffff');
+        document.documentElement.style.setProperty('--color-text-section', '#bdae82');
+        document.documentElement.style.setProperty('--color-hover-header', '#bdae82');
+        document.documentElement.style.setProperty('--color-line-title', '#bdae82');
+        document.documentElement.style.setProperty('--color-input-bg', 'rgba(0, 0, 0, 0.5)');   
+    }
+
+    headerBtnToogleTheme.classList.toggle('night');
+
+    elemArr.forEach((el) => el.classList.toggle('light-theme'));
+    portfolioBtns.forEach((el) => el.classList.toggle('light-theme'));
+    priceBtns.forEach((el) => el.classList.toggle('light-theme'));
+    footerBtns.forEach((el) => el.classList.toggle('light-theme'));
+}
+headerBtnToogleTheme.addEventListener('click', changeTheme);

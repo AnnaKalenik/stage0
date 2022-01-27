@@ -1,5 +1,5 @@
 const i18Obj = {
-    'en': {
+    'EN': {
         'skills': 'Skills',
         'portfolio': 'Portfolio',
         'video': 'Video',
@@ -45,7 +45,7 @@ const i18Obj = {
         'textarea': 'Message',
         'send-message': 'Send message'
     },
-    'ru': {
+    'RU': {
         'skills': 'Навыки',
         'portfolio': 'Портфолио',
         'video': 'Видео',

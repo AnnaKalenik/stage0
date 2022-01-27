@@ -1,7 +1,16 @@
 :root {
-    --color-gold: #bdae82;
-    --color-black: #000000;
-    --color-white: #ffffff;
+    --color-body: #000000;
+    --color-text: #ffffff;
+    --color-text-section: #bdae82;
+    --color-hover: #bdae82;
+    --color-hover-header: #bdae82;
+    --color-bg: #bdae82;
+    --color-line-title: #bdae82;
+    --color-input-bg: rgba(0, 0, 0, 0.5);
+    --color-btnwhite-bg: #ffffff;
+    --color-btngold-bg: #bdae82;
+    --color-btn-bg-hover: #1C1C1C;
+    --color-btn-text-hover: #bdae82;
     --font1: 60px;
     --line-height1: 120px;
     --font2: 40px;
@@ -29,8 +38,8 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: var(--font3);
     line-height: var(--line-height3);
-    color: var(--color-white);
-    background-color: var(--color-black);
+    color: var(--color-text);
+    background-color: var(--color-body);
     margin: 0;
     padding: 0;
 }
@@ -43,7 +52,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
 h1, h2 {
@@ -52,6 +61,12 @@ h1, h2 {
 
 h1, h2, h3 {
     margin: 0;
+}
+
+.site {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Header */
@@ -65,6 +80,10 @@ h1, h2, h3 {
     background-position: center 0;
 }
 
+.header-container.light-theme {
+    background-image: url('../assets/img/hero-bg-light.jpg'); 
+}
+
 .header-link {
     display: block;
     width: 50px;
@@ -75,8 +94,17 @@ h1, h2, h3 {
     transition: all 0.3s;
 }
 
-.header-logo:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+.header-logo {
+    transition: all 0.3s;
+}
+
+.header-logo.light-theme {
+    filter: invert(90%) ;
+}
+
+.header-logo:hover,
+.header-logo.light-theme:hover {
+    filter: invert(0%);
 }
 
 .header-nav {
@@ -91,11 +119,11 @@ h1, h2, h3 {
 }
 
 .header-nav a {
-    transition: 0.3s;
+    transition: all 0.3s;
 }
 
 .header-nav a:hover {
-    color: var(--color-gold);
+    color: var(--color-hover-header);
 }
 
 .nav-link {
@@ -111,7 +139,7 @@ h1, h2, h3 {
 }
 
 .header-button {
-    color: var(--color-white);
+    color: var(--color-text);
     font-size: inherit;
     font-weight: bold;
     border: 0;
@@ -124,7 +152,7 @@ h1, h2, h3 {
 
 .header-button:hover,
 .header-button.active {
-    color: var(--color-gold);
+    color: var(--color-hover-header);
 }
 
 .button-en {
@@ -139,11 +167,40 @@ h1, h2, h3 {
     display: none;
 }
 
+.header-button-theme {
+    width: 45px;
+    height: 45px;
+    margin-left: 35px;
+    background-image: url(../assets/svg/header-sun.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.header-button-theme:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.header-button-theme.light-theme {
+    background-image: url(../assets/svg/header-moon.svg);
+}
+
+.header-button-theme.light-theme:hover {
+    filter: invert(100%);
+}
+
 /* Hero */
 .hero-container {
     background-image: url('../assets/img/hero-bg.jpg');
     background-repeat: no-repeat;
     background-position: center -90px;
+}
+
+.hero-container.light-theme {
+    background-image: url('../assets/img/hero-bg-light.jpg');
 }
 
 .section-hero {
@@ -168,7 +225,7 @@ h1, h2, h3 {
 
 .button {
     border: 0;
-    background-color: var(--color-gold);
+    background-color: var(--color-bg);
     font-size: inherit;
     width: 220px;
     height: 55px;
@@ -177,8 +234,17 @@ h1, h2, h3 {
 }
 
 .button:hover {
-    color: var(--color-white);
-    transform: scale(1.05);
+    color: var(--color-text);
+}
+
+.hero-button.light-theme {
+    background-color: var(--color-btnwhite-bg);
+}
+
+.hero-button.light-theme:hover {
+    color: var(--color-btn-text-hover);
+    background-color: var(--color-btn-bg-hover);
+    border: 2px solid var(--color-bg);
 }
 
 /*For all sections */
@@ -195,7 +261,7 @@ h1, h2, h3 {
 
 .section-title {
     font-size: var(--font2);
-    color: var(--color-gold);
+    color: var(--color-text-section);
     line-height: var(--line-height2);
     padding-bottom: 60px;
 }
@@ -207,7 +273,7 @@ h1, h2, h3 {
 .section-title-elem::before, .section-title-elem::after {
     content: '';
     position: absolute;
-    background-color: var(--color-gold);
+    background-color: var(--color-line-title);
     width: 60%;
     height: 2px;
     top: 27%;
@@ -287,9 +353,9 @@ h1, h2, h3 {
 }
 
 .portfolio-btn  {
-    border: 2px solid var(--color-gold);
-    background-color: var(--color-black);
-    color: var(--color-gold);
+    border: 2px solid var(--color-bg);
+    background-color: transparent;
+    color: var(--color-text-section);
     font-size: inherit;
     line-height: var(--line-height7);
     width: 220px;
@@ -299,19 +365,30 @@ h1, h2, h3 {
 }
 
 .portfolio-btn:hover {
-    color: var(--color-white);
+    color: var(--color-text);
     transform: scale(1);
 }
 
 .portfolio-btn.active {
     border: 0;
-    background-color: var(--color-gold);
-    color: var(--color-white);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     font-size: inherit;
     width: 220px;
     height: 55px;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+.portfolio-btn.light-theme {
+    background-color: var(--color-btngold-bg);
+}
+
+.portfolio-btn.light-theme:hover,
+.portfolio-btn.light-theme.active {
+    border: 2px solid var(--color-bg);
+    background-color: var(--color-btn-bg-hover);
+    color: var(--color-btn-text-hover);
 }
 
 .portfolio-images {
@@ -345,17 +422,23 @@ h1, h2, h3 {
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
+    cursor: pointer;
     transition: all 0.3s;
 }
 
-.button-play:hover {
+.button-play.light-theme {
+    filter: invert(100%);
+}
+
+.button-play:hover,
+.button-play.light-theme:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
     transform: scale(1.05);
 }
 
 /* Price */
 .section-price {
-    padding-bottom: 100px;
+    padding-bottom: 50.1px;
 }
 
 .price-list {
@@ -367,7 +450,7 @@ h1, h2, h3 {
 
 .price-card {
     text-align: center;
-    border: 3px solid var(--color-gold);
+    border: 3px solid var(--color-bg);
     padding: 41.5px 113px;
 }
 
@@ -385,7 +468,7 @@ h1, h2, h3 {
 .price-value {
     font-size: var(--font5);
     line-height: var(--line-height5);
-    color: var(--color-gold);
+    color: var(--color-text-section);
     padding-bottom: 20px;
 }
 
@@ -398,12 +481,26 @@ h1, h2, h3 {
     line-height: var(--line-height4);
 }
 
+.price-button.light-theme {
+    background-color: var(--color-btngold-bg);
+}
+
+.price-button.light-theme:hover {
+    border: 2px solid var(--color-bg);
+    background-color: var(--color-btn-bg-hover);
+    color: var(--color-btn-text-hover);
+}
+
 /* Contacts */
 .container-contacts {
     background-image: url(../assets/img/contacts-bg.jpg);
     background-size: auto 700px;
     background-position: center center;
     background-repeat: no-repeat;
+}
+
+.container-contacts.light-theme {
+    background-image: url(../assets/img/contacts-bg-light.jpg);
 }
 
 .section-contacts {
@@ -426,10 +523,10 @@ h1, h2, h3 {
 input,
 textarea {
     width: 450px;
-    color: var(--color-gold);
+    color: var(--color-text-section);
     font-size: var(--font3);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--color-gold);
+    background-color: var(--color-input-bg);
+    border: 2px solid var(--color-bg);
     box-sizing: border-box;
     padding: 11px 18px;
 }
@@ -440,7 +537,7 @@ textarea::placeholder {
     font-size: var(--font3);
     font-weight: normal;
     line-height: var(--line-height7);
-    color: var(--color-gold);
+    color: var(--color-text-section);
 }
 
 input {
@@ -452,6 +549,16 @@ textarea {
     resize: none;
     padding-top: 4px;
     margin-bottom: 30px;
+}
+
+.contacts-button.light-theme {
+    background-color: var(--color-btnwhite-bg);
+}
+
+.contacts-button.light-theme:hover {
+    color: var(--color-btn-text-hover);
+    background-color: var(--color-btn-bg-hover);
+    border: 2px solid var(--color-bg);
 }
 
 /* Footer */
@@ -477,7 +584,7 @@ textarea {
 
 .footer-link-github:hover,
 .footer-link-rschool:hover {
-    color: var(--color-gold);
+    color: var(--color-hover);
 }
 
 .footer-list {
@@ -516,7 +623,11 @@ textarea {
     transition: all 0.3s;
 }
 
-.footer-item:hover {
+.footer-item.light-theme {
+    filter: invert(100%);
+}
+
+.footer-item:hover,
+.footer-item.light-theme:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-    transform: scale(1.1);
 }
