@@ -280,11 +280,11 @@ h1, h2, h3 {
 }
 
 .section-title-elem::before {
-    left: -21%;
+    left: -26%;
 }
 
 .section-title-elem::after {
-    right: -21%;
+    right: -26%;
 }
 
 /* Scills */
@@ -336,11 +336,11 @@ h1, h2, h3 {
 
 /* Portfolio */
 .section-title-elem-portfolio::before {
-    left: -26%;
+    left: -31%;
 }
 
 .section-title-elem-portfolio::after {
-    right: -25%;
+    right: -31%;
 }
 
 .portfolio-buttons {
