@@ -1,3 +1,14 @@
+@media (max-width: 2560px) {
+     /*Price*/
+     .price-list {
+        justify-content: space-around;
+    }
+
+    .price-card {
+        margin-bottom: 49.5px;
+    }
+}
+
 @media (max-width: 1396px) {
     /* Scills */
     .skill-item {
@@ -17,25 +28,20 @@
         padding-left: 11px;
     }
 
-    /*Price*/
-    .price-list {
-        justify-content: space-around;
-    }
-
-    .price-card:nth-child(1),
-    .price-card:nth-child(2) {
-        margin-bottom: 49.5px;
+    /* Portfolio */
+    .section-portfolio {
+        padding-top: 32px;
     }
 }
 
 @media (max-width: 1336px) {
     /* Portfolio */
     .section-title-elem-portfolio::before {
-        left: -28%;
+        left: -33%;
     }
 
     .section-title-elem-portfolio::after {
-        right: -28%;
+        right: -33%;
     }
 } 
 
@@ -53,47 +59,54 @@
 @media (max-width: 1142px) {
     /*For all sections */
     .section-title-elem::before {
-        left: -29%;
+        left: -30%;
     }
     
     .section-title-elem::after {
-        right: -29%;
+        right: -30%;
     }
 
     /* Portfolio */
     .section-title-elem-portfolio::before {
-        left: -32%;
+        left: -36%;
     }
 
     .section-title-elem-portfolio::after {
-        right: -32%;
+        right: -36%;
     }
 } 
 
-@media (max-width: 912px) {
+@media (max-width: 1050px) {
+    /*For all sections */
+    .section-title-elem::before {
+        left: -36%;
+    }
+    
+    .section-title-elem::after {
+        right: -36%;
+    }
+
     /* Portfolio */
     .section-title-elem-portfolio::before {
-        left: -35%;
+        left: -41%;
     }
 
     .section-title-elem-portfolio::after {
-        right: -35%;
+        right: -41%;
     }
 } 
 
 @media (max-width: 880px) {
-    /* Portfolio */
-    .section-title-elem-portfolio::before {
-        left: -37%;
-    }
-
-    .section-title-elem-portfolio::after {
-        right: -37%;
+    /*For all sections */
+      .wrapper-section-title {
+        width: 56%;
     }
 }
 
 @media (max-width: 768px) {
     :root {
+        --color-hover-burger: #bdae82;
+        --color-hover-burger-open: #bdae82;
         --font1: 32px;
         --line-height1: 64px;
         --font2: 32px;
@@ -107,15 +120,14 @@
     }
 
     /* Header */
+    .site {
+        overflow-x: hidden;
+    }
+
     .header-container {
         background-position: -5px -30px;
         background-size: auto 620px;
         position: relative;
-        overflow: hidden;
-    }
-
-    .header-container.open {
-        overflow: visible;
     }
 
     .header-nav {
@@ -124,7 +136,7 @@
         margin: 0;
         padding-top: 134px;
         padding-left: 127px;
-        background-color: var(--color-black);
+        background-color: var(--color-body);
         position: absolute;
         top: 0;
         right: -80%;
@@ -157,6 +169,10 @@
         margin: 0;
     }
 
+    .header-nav a:hover {
+        color: var(--color-hover);
+    }
+
     .header-languages {
         margin-left: auto;
     }
@@ -176,14 +192,23 @@
         user-select: none;
         cursor: pointer;
         z-index: 2;
+        transition: all 0.3s;
     }
 
     .line {
         width: 100%;
         height: 3px;
-        background: var(--color-white);
+        background: var(--color-text);
         z-index: 15;
         transition: all 0.3s ease-in-out;
+    }
+
+    .line.hover {
+        background: var(--color-hover-burger);
+    }
+
+    .line.open-hover {
+        background: var(--color-hover-burger-open);
     }
 
     .line2 {
@@ -227,24 +252,12 @@
     }
 
     /*For all sections */
-    .wrapper-section-title {
-        width: 56%;
-    }
-
     .section-title {
         padding-bottom: 64px;
     }
 
     .section-title-elem::before, .section-title-elem::after {
         top: 18%;
-    }
-    
-    .section-title-elem::before {
-        left: -28%;
-    }
-    
-    .section-title-elem::after {
-        right: -28%;
     }
 
     /* Scills */
@@ -258,11 +271,11 @@
     }
 
     .section-title-elem-portfolio::before {
-        left: -36%;
+        left: -43%;
     }
 
     .section-title-elem-portfolio::after {
-        right: -35%;
+        right: -43%;
     }
 
     /* Video */
@@ -287,7 +300,7 @@
 
     /* Price */
     .section-price {
-        padding-bottom: 80px;
+        padding-bottom: 30.1px;
     }
 
     .section-price .section-title {
@@ -360,15 +373,15 @@
 
     /*For all sections */
     .wrapper-section-title {
-        width: 60%;
+        width: 70%;
     }
 
     .section-title-elem::before {
-        left: -35%;
+        left: -32%;
     }
     
     .section-title-elem::after {
-        right: -35%;
+        right: -32%;
     }
 
     /* Scills */
@@ -391,11 +404,11 @@
     
     /* Portfolio */
     .section-title-elem-portfolio::before {
-        left: -40%;
+        left: -38%;
     }
 
     .section-title-elem-portfolio::after {
-        right: -40%;
+        right: -38%;
     }
 }
 
@@ -416,6 +429,13 @@
     }
 }
 
+@media (max-width: 620px) {
+    .header-nav {
+        width: 100%;
+        right: -100%;
+    }
+}
+
 @media (max-width: 613px) {
     /* Header */
     .header-container {
@@ -430,6 +450,18 @@
     /*Video*/
     .video-player img {
         margin-left: 30px;
+    }
+}
+
+
+@media (max-width: 570px) {
+    /* Portfolio */
+    .section-title-elem-portfolio::before {
+        left: -40%;
+    }
+
+    .section-title-elem-portfolio::after {
+        right: -40%;
     }
 }
 
@@ -452,14 +484,18 @@
     .wrapper-section-title {
         width: 80%;
     }
+
+    /* Portfolio */
+    .section-title-elem-portfolio::before {
+        left: -43%;
+    }
+
+    .section-title-elem-portfolio::after {
+        right: -43%;
+    }
 }
 
 @media (max-width: 493px) {
-    /*For all sections */
-    .wrapper-section-title {
-        width: 80%;
-    }
-
     /*Portfolio*/
     .portfolio-images {
         gap: 35px; 
@@ -470,12 +506,28 @@
     }
 }
 
-@media (max-width: 463px) {
+@media (max-width: 470px) {
     /*For all sections */
-    .wrapper-section-title {
-        width: 80%;
+    .section-title-elem::before {
+        left: -36%;
     }
     
+    .section-title-elem::after {
+        right: -36%;
+    }
+
+    /*Portfolio*/
+    .section-title-elem-portfolio::before {
+        left: -45%;
+    }
+
+    .section-title-elem-portfolio::after {
+        right: -45%;
+    }
+}
+
+@media (max-width: 463px) {
+    /*Video*/
     .button-play {
         width: 45px;
         height: 45px;
@@ -501,7 +553,6 @@
     }
 
     .header-nav {
-        width: 75%;
         padding-top: 110px;
         padding-left: 80px;
     }
@@ -535,25 +586,54 @@
     }
 }
 
-@media (max-width: 375px) {
-     /* Portfolio */
-     .section-title-elem-portfolio::before {
-        left: -47%;
+@media (max-width: 415px) {
+   /*For all sections */
+   .wrapper-section-title {
+        width: 100%;
+    }
+
+    /* Portfolio */
+    .section-title-elem-portfolio::before {
+        left: -43%;
     }
 
     .section-title-elem-portfolio::after {
-        right: -47%;
+        right: -43%;
     }
-      
+}
+
+@media (max-width: 375px) {
+    /* Portfolio */      
     .portfolio-images img {
         width: 250px;
     }
 }
 
-@media (max-width: 350px) {
-    /*Price*/
-    .price-card {
-        padding: 25px 25px ;
+@media (max-width: 370px) {
+    /* Header */
+    .header-languages {
+        margin-left: 10px;
+    }
+
+    .button-ru {
+        margin-left: 2px;
+    }
+
+    .header-button-theme {
+        margin-left: 10px;
+    }
+
+    .header-hamburger {
+        margin: 0 5px 0 10px;
+    }
+
+    /* Portfolio */      
+    .section-title-elem-portfolio::before {
+        left: -47%;
+    }
+
+    .section-title-elem-portfolio::after {
+        right: -47%;
     }
 }
 
@@ -561,5 +641,30 @@
     /*Header*/
     .header-nav {
         padding-left: 50px;
+    }
+
+    /*Price*/
+    .price-card {
+        padding: 25px 25px ;
+    }
+}
+
+@media (max-width: 330px) {
+    /*For all sections */
+    .section-title-elem::before {
+        left: -40%;
+    }
+    
+    .section-title-elem::after {
+        right: -40%;
+    }
+
+    /* Portfolio */      
+    .section-title-elem-portfolio::before {
+        left: -50%;
+    }
+
+    .section-title-elem-portfolio::after {
+        right: -50%;
     }
 }
