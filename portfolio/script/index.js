@@ -85,7 +85,7 @@ headerLangContainer.addEventListener('click', getTranslate);
 
 // CHANGE THEME
 function changeTheme (event) {
-    if (event.target.classList.contains('night')) {
+    if (event.target.classList.contains('dark-theme')) {
         document.documentElement.style.setProperty('--color-body', '#ffffff');
         document.documentElement.style.setProperty('--color-text', '#1C1C1C');
         document.documentElement.style.setProperty('--color-text-section', '#1C1C1C');
@@ -101,7 +101,7 @@ function changeTheme (event) {
         document.documentElement.style.setProperty('--color-input-bg', 'rgba(0, 0, 0, 0.5)');   
     }
 
-    headerBtnToogleTheme.classList.toggle('night');
+    headerBtnToogleTheme.classList.toggle('dark-theme');
 
     elemArr.forEach((el) => el.classList.toggle('light-theme'));
     portfolioBtns.forEach((el) => el.classList.toggle('light-theme'));
@@ -109,3 +109,17 @@ function changeTheme (event) {
     footerBtns.forEach((el) => el.classList.toggle('light-theme'));
 }
 headerBtnToogleTheme.addEventListener('click', changeTheme);
+
+//IMAGES CACHING
+function preloadImages () {
+    const seasons = ['winter', 'spring', 'summer', 'autumn'];
+
+    seasons.forEach(el => {
+        for (let i = 1; i <= 6; i++) {
+            const img = new Image();
+
+            img.src = `./assets/img/${el}/${i}.jpg`;
+        }
+    })
+}
+preloadImages();
