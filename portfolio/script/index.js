@@ -4,7 +4,7 @@ import i18Obj from './translate.js';
 
 // constants for menu-burger
 const hamburger = document.querySelector('.header-hamburger');
-const headerContainer = document.querySelector('.header-container');
+const hamburgerLines = document.querySelectorAll('.line');
 const headerNav = document.querySelector('.header-nav');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -35,15 +35,32 @@ const footerBtns = document.querySelectorAll('.footer-item');
 function toogleClassOpen () {
     hamburger.classList.toggle('open');
     headerNav.classList.toggle('open');
-    headerContainer.classList.toggle('open');
 }
 hamburger.addEventListener('click', toogleClassOpen);
+
+function addHoverEffectHamburger (event) {
+    hamburgerLines.forEach(line => {
+        if(event.target.classList.contains('open')) {
+            line.classList.add('open-hover');
+        } /*else {
+            line.classList.add('hover');
+        }*/
+    });
+}
+hamburger.addEventListener('mouseenter', addHoverEffectHamburger);
+
+function removeHoverEffectHamburger () {
+    hamburgerLines.forEach(line => {
+        line.classList.remove('hover');
+        line.classList.remove('open-hover');
+    });
+}
+hamburger.addEventListener('mouseleave', removeHoverEffectHamburger);
 
 function removeClassOpen (event) {
     if (event.target.classList.contains('nav-link')) {
         hamburger.classList.remove('open');
         headerNav.classList.remove('open');
-        headerContainer.classList.remove('open');
     }
 }
 navLinks.forEach((link) => link.addEventListener('click', removeClassOpen));
@@ -90,6 +107,7 @@ function changeTheme (event) {
         document.documentElement.style.setProperty('--color-text', '#1C1C1C');
         document.documentElement.style.setProperty('--color-text-section', '#1C1C1C');
         document.documentElement.style.setProperty('--color-hover-header', '#ffffff');
+        document.documentElement.style.setProperty('--color-hover-burger', '#ffffff');
         document.documentElement.style.setProperty('--color-line-title', '#1C1C1C');
         document.documentElement.style.setProperty('--color-input-bg', 'rgba(255, 255, 255, 0.5)');   
     } else {
@@ -97,6 +115,7 @@ function changeTheme (event) {
         document.documentElement.style.setProperty('--color-text', '#ffffff');
         document.documentElement.style.setProperty('--color-text-section', '#bdae82');
         document.documentElement.style.setProperty('--color-hover-header', '#bdae82');
+        document.documentElement.style.setProperty('--color-hover-burger', '#bdae82');
         document.documentElement.style.setProperty('--color-line-title', '#bdae82');
         document.documentElement.style.setProperty('--color-input-bg', 'rgba(0, 0, 0, 0.5)');   
     }

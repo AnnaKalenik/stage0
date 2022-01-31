@@ -6,6 +6,7 @@
     --color-hover-header: #bdae82;
     --color-bg: #bdae82;
     --color-line-title: #bdae82;
+    --color-price-value: #bdae82;
     --color-input-bg: rgba(0, 0, 0, 0.5);
     --color-btnwhite-bg: #ffffff;
     --color-btngold-bg: #bdae82;
@@ -98,11 +99,15 @@ h1, h2, h3 {
     transition: all 0.3s;
 }
 
+
+.header-logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
 .header-logo.light-theme {
     filter: invert(90%) ;
 }
 
-.header-logo:hover,
 .header-logo.light-theme:hover {
     filter: invert(0%);
 }
@@ -468,7 +473,7 @@ h1, h2, h3 {
 .price-value {
     font-size: var(--font5);
     line-height: var(--line-height5);
-    color: var(--color-text-section);
+    color: var(--color-price-value);
     padding-bottom: 20px;
 }
 

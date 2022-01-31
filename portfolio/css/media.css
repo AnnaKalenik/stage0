@@ -105,6 +105,8 @@
 
 @media (max-width: 768px) {
     :root {
+        --color-hover-burger: #bdae82;
+        --color-hover-burger-open: #bdae82;
         --font1: 32px;
         --line-height1: 64px;
         --font2: 32px;
@@ -118,15 +120,14 @@
     }
 
     /* Header */
+    .site {
+        overflow-x: hidden;
+    }
+
     .header-container {
         background-position: -5px -30px;
         background-size: auto 620px;
         position: relative;
-        overflow-x: hidden;
-    }
-
-    .header-container.open {
-        overflow-x: visible;
     }
 
     .header-nav {
@@ -168,6 +169,10 @@
         margin: 0;
     }
 
+    .header-nav a:hover {
+        color: var(--color-hover);
+    }
+
     .header-languages {
         margin-left: auto;
     }
@@ -196,6 +201,14 @@
         background: var(--color-text);
         z-index: 15;
         transition: all 0.3s ease-in-out;
+    }
+
+    .line.hover {
+        background: var(--color-hover-burger);
+    }
+
+    .line.open-hover {
+        background: var(--color-hover-burger-open);
     }
 
     .line2 {
