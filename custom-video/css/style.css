@@ -50,19 +50,40 @@ html {
     padding: 10px 0;
 }
 
-.main-player {
+.player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-y: hidden;
     box-shadow: 0 10px 80px -10px rgba(0, 0, 0, 0.3);
 }
 
 .player-video {
-    position: relative;
+    max-width: 1440px;
 }
 
 .player-controls {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-column-gap: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     padding: 10px 20px;
+    transition:all 0.4s;
+    /* transform: translateY(100%); */
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.player:hover .player-controls {
+    transform: translateY(0);
+}
+
+.player-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .player-button:active, .player-button:focus {
@@ -75,6 +96,7 @@ html {
     background-repeat: no-repeat;
     background-position: center;
     filter: invert(100%);
+    cursor: pointer;
     transition: all 0.3s;
 }
 
@@ -86,25 +108,58 @@ html {
 .player-button-play {
     height: 30px;
     width: 30px;
+    margin-right: 20px;
     background-image: url(../assets/svg/video-play.svg);
-    background-size: 50px 50px;
+    background-size: 45px 45px;
+}
+
+.player-button-play.toggle {
+    background-image: url(../assets/svg/video-pause.svg);
+    background-size: 40px 40px;
 }
 
 .player-button-sound {
     height: 30px;
-    width: 30px;
+    width: 35px;
+    margin-right: 20px;
     background-image: url(../assets/svg/sound-volume.svg);
-    background-size: 40px 40px;
+    background-size: 32px 37px;
+}
+
+.player-button-sound.toggle {
+    background-image: url(../assets/svg/sound-mute.svg);
+    background-size: 30.5px 35px;
 }
 
 .player-big-button-play {
+    position: absolute;
     height: 100px;
     width: 100px;
     background-image: url(../assets/svg/video-play-btn.svg);
-    top: 44%;
-    left: 47.2%;
-    position: absolute;
 }
+
+.player-button-sound.transparent {
+    display: none;
+}
+
+.player-progress {
+    background: linear-gradient(to right, #d6eee2 0%, #c2f0da 40%, #fff 40%, #fff 100%);
+    border: none;
+    height: 10px;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+  
+  .player-progress::-webkit-slider-thumb {
+    width: 1px;
+    height: 10px;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    background: rgb(128, 148, 138);
+  }
 
 .footer,
 .footer-data {

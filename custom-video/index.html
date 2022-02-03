@@ -23,15 +23,15 @@
 
         <main class="main">
             <div class="main-player player">
-                <video class="player-video viewer" src="./assets/video/video.mp4"></video>
+                <video class="player-video" src="./assets/video/video.mp4"></video>
                 <div class="player-controls">
                     <div class="player-column">
-                        <button class="player-button player-button-play toggle"></button>
-                        <input type="range" name="playback" min="0" max="100" step="1" value="1" class="player-progress">
+                        <button class="player-button player-button-play"></button>
+                        <input type="range" name="playback" min="0" max="100" step="1" value="0" class="player-progress">
                     </div>
                     <div class="player-column">
                         <button class="player-button player-button-sound"></button>
-                        <input type="range" name="volume" min="0.5" max="100" step="1" value="1" class="player-progress">
+                        <input type="range" name="volume" min="0.5" max="100" step="1" value="40" class="player-progress">
                     </div>                   
                 </div>
                 <button class="player-button player-big-button-play"></button>
