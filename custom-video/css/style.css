@@ -138,7 +138,7 @@ html {
     background-image: url(../assets/svg/video-play-btn.svg);
 }
 
-.player-button-sound.transparent {
+.player-big-button-play.transparent {
     display: none;
 }
 
