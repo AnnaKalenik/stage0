@@ -13,6 +13,21 @@ const inputSound = document.querySelector('[name="volume"]');
 video.addEventListener('click', toggleVideo);
 btnBigPlay.addEventListener('click', toggleVideo);
 btnPlay.addEventListener('click', toggleVideo);
+
+let mousedown = false;
+video.addEventListener('timeupdate', updatelLoading)
+playerLoading.addEventListener('click', handleLoading);
+playerLoading.addEventListener('mousedown', () => mousedown = true);
+playerLoading.addEventListener('mousemove', (e) => mousedown && handleLoading(e));
+playerLoading.addEventListener('mouseup', () => mousedown = false);
+video.addEventListener('ended', isVideoEnded);
+
+btnSound.addEventListener('click', toggleSound);
+inputSound.addEventListener('change', updateSound);
+inputSound.addEventListener('input', updateProgress);
+
+btnScreen.addEventListener('click', toggleScreen);
+
 function toggleVideo() {
     if (video.paused) {
         video.play();
@@ -25,19 +40,16 @@ function toggleVideo() {
     }
 }
 
-video.addEventListener('timeupdate', updatelLoading)
 function updatelLoading() {
     const percent = (video.currentTime / video.duration) * 100;
     playerLoadingBar.style.flexBasis = `${percent}%`;
 }
 
-playerLoading.addEventListener('click', handleLoading);
 function handleLoading(e) {
     const handleTime = (e.offsetX / playerLoading.offsetWidth) * video.duration;
     video.currentTime = handleTime;
 }
 
-video.addEventListener('ended', isVideoEnded);
 function isVideoEnded() {
     if (video.ended) {
         btnPlay.classList.remove('toggle');
@@ -45,13 +57,11 @@ function isVideoEnded() {
     }
 }
 
-btnSound.addEventListener('click', toggleSound);
 function toggleSound() {
     btnSound.classList.toggle('toggle');
     video.volume != 0 ? video.volume = 0 : video.volume = inputSound.value;
 } 
 
-inputSound.addEventListener('change', updateSound);
 function updateSound() {
     const value = this.value;
     video.volume = value;
@@ -62,13 +72,11 @@ function isVolDisable() {
     inputSound.value === '0' ? btnSound.classList.add('toggle') : btnSound.classList.remove('toggle');
 }
 
-inputSound.addEventListener('input', updateProgress);
 function updateProgress() {
     const value = this.value;
     this.style.background = `linear-gradient(to right, #d6eee2 0%, #c2f0da ${value * 100}%, rgba(255, 255, 255, 0.4) ${value * 100}%, rgba(255, 255, 255, 0.4) 100%)`;
 }
 
-btnScreen.addEventListener('click', toggleScreen);
 function toggleScreen() {
     if (video.webkitSupportsFullscreen) video.webkitEnterFullScreen()
 }

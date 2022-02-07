@@ -55,7 +55,7 @@ html {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow-y: hidden;
+    overflow: hidden;
     box-shadow: 0 10px 80px -10px rgba(0, 0, 0, 0.3);
 }
 
@@ -102,7 +102,7 @@ html {
 
 .player-button:hover {
     filter: invert(80%);
-    filter: invert(86%) sepia(15%) saturate(638%) hue-rotate(100deg) brightness(92%) contrast(87%);
+    filter: invert(80%) sepia(15%) saturate(638%) hue-rotate(100deg) brightness(92%) contrast(87%);
 }
 
 .player-button-play {
@@ -163,6 +163,7 @@ html {
     background: linear-gradient(to right,#d6eee2 40%, #c2f0da 100%);
     flex: 0;
     flex-basis: 0%;
+    cursor: ew-resize;
     transition: all 0.1s ease-in;
 }
 
@@ -177,14 +178,14 @@ html {
     -webkit-appearance: none;
 }
   
-  .player-progress::-webkit-slider-thumb {
-    width: 15px;
-    height: 15px;
+.player-progress::-webkit-slider-thumb {
+    width: 1px;
+    height: 10px;
     border-radius: 50px;
     -webkit-appearance: none;
     cursor: ew-resize;
-    background: rgb(128, 148, 138);
-  }
+    background: #c2f0da;
+}
 
 .footer,
 .footer-data {
