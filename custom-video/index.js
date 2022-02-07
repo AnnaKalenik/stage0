@@ -4,6 +4,7 @@ const video = document.querySelector('.player-video');
 const btnBigPlay = document.querySelector('.player-big-button-play');
 const btnPlay = document.querySelector('.player-button-play');
 const btnSound = document.querySelector('.player-button-sound');
+const btnScreen = document.querySelector('.player-button-fullscreen');
 
 const playerLoading = document.querySelector('.player-loading');
 const playerLoadingBar = document.querySelector('.player-loading-bar');
@@ -33,7 +34,6 @@ function updatelLoading() {
 playerLoading.addEventListener('click', handleLoading);
 function handleLoading(e) {
     const handleTime = (e.offsetX / playerLoading.offsetWidth) * video.duration;
-    console.log(e.offsetX);
     video.currentTime = handleTime;
 }
 
@@ -42,7 +42,6 @@ function isVideoEnded() {
     if (video.ended) {
         btnPlay.classList.remove('toggle');
         btnBigPlay.classList.remove('transparent');
-        playerLoadingBar.style.flexBasis = '0%';
     }
 }
 
@@ -67,4 +66,9 @@ inputSound.addEventListener('input', updateProgress);
 function updateProgress() {
     const value = this.value;
     this.style.background = `linear-gradient(to right, #d6eee2 0%, #c2f0da ${value * 100}%, rgba(255, 255, 255, 0.4) ${value * 100}%, rgba(255, 255, 255, 0.4) 100%)`;
+}
+
+btnScreen.addEventListener('click', toggleScreen);
+function toggleScreen() {
+    if (video.webkitSupportsFullscreen) video.webkitEnterFullScreen()
 }
