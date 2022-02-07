@@ -11,11 +11,8 @@ html {
 }
   
   body {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    min-height:100vh;
-    min-width: 100vw;
+    /* min-height:100vh;
+    min-width: 100vw; */
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
@@ -47,6 +44,9 @@ html {
 }
 
 .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px 0;
 }
 
@@ -60,7 +60,8 @@ html {
 }
 
 .player-video {
-    max-width: 1440px;
+    width: 100%;
+    height: 100%;
 }
 
 .player-controls {
@@ -101,7 +102,6 @@ html {
 }
 
 .player-button:hover {
-    filter: invert(80%);
     filter: invert(80%) sepia(15%) saturate(638%) hue-rotate(100deg) brightness(92%) contrast(87%);
 }
 
