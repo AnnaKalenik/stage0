@@ -65,14 +65,14 @@ html {
 
 .player-controls {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr 0.1fr;
     grid-column-gap: 30px;
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 10px 20px;
     transition:all 0.4s;
-    transform: translateY(100%);
+    /* transform: translateY(100%); */
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -102,7 +102,7 @@ html {
 
 .player-button:hover {
     filter: invert(80%);
-    /* filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%); */
+    filter: invert(86%) sepia(15%) saturate(638%) hue-rotate(100deg) brightness(92%) contrast(87%);
 }
 
 .player-button-play {
@@ -115,7 +115,7 @@ html {
 
 .player-button-play.toggle {
     background-image: url(../assets/svg/video-pause.svg);
-    background-size: 40px 40px;
+    background-size: 22px 22px;
 }
 
 .player-button-sound {
