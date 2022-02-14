@@ -11,14 +11,14 @@ html {
 }
   
   body {
+    min-height:100vh;
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    background:#d6eee2;
-    background: linear-gradient(135deg, #f1faf6 0%,#d6eee2 48%, #c2f0da 100%);
+    color: #ffffff;
+    background:#fa2222;
     background-size:cover;
-    overflow-y: hidden;
 }
 
 .container {
@@ -44,20 +44,36 @@ html {
 
 .main {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 60px 0;
     justify-content: center;
-    padding: 10px 0;
+    height: 100%;
 }
 
-.main-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+.main-btn {
+    font-size: 20px;
+    color: inherit;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    padding: 15px 40px;
+    margin-bottom: 50px;
+    cursor: pointer; 
+    transition: all 0.3s;
 }
 
+.main-btn:hover {
+    color: #fa2222;
+    background-color: #ffffff;
+}
 
-
+.main-quote {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+}
 
 .footer,
 .footer-data {
@@ -83,7 +99,7 @@ html {
 }
 
 .footer-link:hover {
-    color: #2b7e56;
+    color: #000000;
 }
 
 .footer-link-rss {
