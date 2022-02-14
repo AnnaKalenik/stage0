@@ -4,20 +4,20 @@ html {
     box-sizing: border-box;
 }
   
-  *, *:before, *:after {
+*, *:before, *:after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
   
-  body {
+body {
     min-height:100vh;
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     color: #ffffff;
-    background:#fa2222;
+    background-color:#fa2222;
     background-size:cover;
 }
 
@@ -64,7 +64,7 @@ html {
     transition: all 0.3s;
 }
 
-.main-btn:hover {
+.main-btn.active {
     color: #fa2222;
     background-color: #ffffff;
 }
@@ -73,6 +73,11 @@ html {
     font-size: 40px;
     line-height: 50px;
     text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-author {
+    font-size: 20px;
 }
 
 .footer,

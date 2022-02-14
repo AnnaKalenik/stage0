@@ -12,6 +12,11 @@
         font-size: 30px;
         line-height: 40px;
     }
+
+    .main-author {
+        font-size: 18px;
+    }
+
     .footer {
         height: 200px;
         flex-direction: column-reverse;
