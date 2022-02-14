@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+  
+  *, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    background:#d6eee2;
+    background: linear-gradient(135deg, #f1faf6 0%,#d6eee2 48%, #c2f0da 100%);
+    background-size:cover;
+    overflow-y: hidden;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between;
+    min-height:100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    padding: 30px 0;
+}
+
+.header-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+
+.footer,
+.footer-data {
+    display: flex;
+}
+
+.footer {
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.footer-copyright,
+.footer-year {
+    padding-right: 20px;
+}
+
+.footer-link {
+    display: block;
+    font-family: inherit;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+}
+
+.footer-link:hover {
+    color: #2b7e56;
+}
+
+.footer-link-rss {
+    height: 40px;
+    width: 100px;
+    background-image: url(../assets/svg/logo-rss.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}

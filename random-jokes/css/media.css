@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 425px) {
+    .footer {
+        height: 200px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
