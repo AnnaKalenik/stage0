@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+  
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+  
+body {
+    min-height:100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    background-color:#fbee37;
+    background-size:cover;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between;
+    min-height:100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    padding: 30px 0;
+}
+
+.header-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+
+}
+
+.area,
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.area {
+    width: 512px;
+    height: 512px;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.cell {
+    width: 170px;
+    height: 170px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    font-size: 70px;
+    box-sizing: border-box;
+}
+
+.cell:hover {
+    background-color:  rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.player {
+    margin-top: 80px;
+}
+
+.victory  {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #ffffff;
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .main-btn {
+    font-size: 20px;
+    color: inherit;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    padding: 15px 40px;
+    margin-bottom: 50px;
+    cursor: pointer; 
+    transition: all 0.3s;
+}
+
+.main-btn.active {
+    color: #fa2222;
+    background-color: #ffffff;
+}
+
+.main-quote {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-author {
+    font-size: 20px;
+} */
+
+.footer,
+.footer-data {
+    display: flex;
+}
+
+.footer {
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.footer-copyright,
+.footer-year {
+    padding-right: 20px;
+}
+
+.footer-link {
+    display: block;
+    font-family: inherit;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+}
+
+.footer-link:hover {
+    color: #000000;
+}
+
+.footer-link-rss {
+    height: 40px;
+    width: 100px;
+    background-image: url(../assets/svg/logo-rss.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
