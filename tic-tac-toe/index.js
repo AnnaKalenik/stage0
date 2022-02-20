@@ -1,46 +1,34 @@
-const gameTickTackToe = function () {
-
-    let game = document.querySelector('.main'),
-        nextStep = 0;
+const gameTickTackToe = () => {
+    
+    const playingArea = document.querySelector('.main-area');
+    let nextStep = 0;
    
-    //создание игровой области
-    const area = document.createElement('div');
-    area.classList.add('area');
-    game.appendChild(area);
+    const addXandO = (event) => {
+        const whoseMove = document.querySelector('.main-player');
 
-    //создание игровой области
-    const whoseMove = document.createElement('div');
-    whoseMove.classList.add('player');
-    whoseMove.innerHTML = 'Play "x"';
-    game.appendChild(whoseMove);
-
-    //создание 9 ячеек
-    for(let i = 0; i < 9; i++) {
-        area.innerHTML += '<div class="cell"></div>';  
-    }
-
-    //добавление Х и O по клику
-    area.addEventListener('click', function(event) {
         if (event.target.innerHTML != '') return;
-        if (document.querySelector('.victory')) return;
+        if (document.querySelector('.active')) return;
 
         if (nextStep % 2 == 0) {
             event.target.innerHTML = 'x';
-            whoseMove.innerHTML = 'Play "o"';
+            whoseMove.innerHTML = 'Plays "O"';
         } else {
             event.target.innerHTML = 'o';
-            whoseMove.innerHTML = 'Play "x"'; 
+            whoseMove.innerHTML = 'Plays "X"'; 
         }  
-
         nextStep++;
 
         checkWin();
-    });
+    }
 
-    //проверка совпадений и объявление победителя
-    const checkWin = function(event) {
+    playingArea.addEventListener('click', addXandO);
 
-        const arr = [
+    const checkWin = () => {
+        const cellsArr = document.querySelectorAll('.main-cell');
+        const message = document.querySelector('.main-message');
+        const togglePlayer = document.querySelector('.main-toggle-player');
+
+        const combArr = [
             [0,1,2],
             [3,4,5],
             [6,7,8],
@@ -51,32 +39,30 @@ const gameTickTackToe = function () {
             [6,4,2]
         ]
 
-        const cells = document.querySelectorAll('.cell'),
-            windVictory = document.createElement('div');
-
-        game.appendChild(windVictory);
-
-        for(let i = 0; i < arr.length; i++) {
-            if (cells[arr[i][0]].innerHTML == 'x' && cells[arr[i][1]].innerHTML == 'x' && cells[arr[i][2]].innerHTML == 'x') {
-                windVictory.classList.add('victory');
-                windVictory.innerHTML = '"x" won!';
+        for(let i = 0; i < combArr.length; i++) {
+            if (cellsArr[combArr[i][0]].innerHTML === 'x' && cellsArr[combArr[i][1]].innerHTML === 'x' && cellsArr[combArr[i][2]].innerHTML === 'x') {
+                message.classList.add('active');
+                togglePlayer.innerHTML = 'X';
 
                 setTimeout(function(){
                     window.location.reload()
-                }, 3000);
+                }, 4000);
             }
-            else if(cells[arr[i][0]].innerHTML == 'o' && cells[arr[i][1]].innerHTML == 'o' && cells[arr[i][2]].innerHTML == 'o') {
-                windVictory.classList.add('victory');
-                windVictory.innerHTML = '"o" won!';
+            else if(cellsArr[combArr[i][0]].innerHTML === 'o' && cellsArr[combArr[i][1]].innerHTML === 'o' && cellsArr[combArr[i][2]].innerHTML === 'o') {
+                message.classList.add('active');
+                togglePlayer.innerHTML = 'O';
 
                 setTimeout(function(){
                     window.location.reload()
-                }, 3000);
+                }, 4000);
             }
-            else if(nextStep == 9) {
-                    setTimeout(function(){
+            else if(nextStep === 9) {
+                message.classList.add('active');
+                togglePlayer.innerHTML = 'Friendship';
+
+                setTimeout(function(){
                     window.location.reload()
-                }, 3000);
+                }, 4000);
             };
         };
     };   

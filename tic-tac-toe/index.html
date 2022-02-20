@@ -19,11 +19,35 @@
     <div class="container">
         <header class="header">
             <h1 class="header-title">Tic-tac-toe</h1>
+            <div class="header-sound">
+                <div class="header-item header-item-track">
+                    <audio class="header-track-audio" src="./assets/audio/audio.mp3" loop type="audio/wav"></audio>    
+                </div>
+                <div class="header-item header-item-shorttrack">
+                    <audio class="header-click-audio" src="./assets/audio/click.mp3" loop type="audio/wav"></audio>
+                    <audio class="header-message-audio" src="./assets/audio/message.mp3" loop type="audio/wav"></audio>     
+                </div>    
+            </div>
         </header>
+    </div>
 
-        <main class="main">
-        </main>
+    <main class="main">
+        <div class="main-area">
+            <div class="main-cell"></div>
+            <div class="main-cell"></div>
+            <div class="main-cell"></div>
+            <div class="main-cell"></div>
+            <div class="main-cell"></div>
+            <div class="main-cell"></div>
+            <div class="main-cell"></div>
+            <div class="main-cell"></div>
+            <div class="main-cell"></div>
+        </div>
+        <div class="main-player">Plays "X"</div>
+        <div class="main-message"><span class="main-toggle-player"></span> won!</div>
+    </main>
 
+    <div class="container">
         <footer class="footer">
             <div class="footer-data">
               <div class="footer-copyright">&copy;</div>
