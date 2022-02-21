@@ -72,18 +72,18 @@ body {
 }
 
 .header-item-shorttrack {
-    background-image: url(../assets/svg/volume.svg);
+    background-image: url(../assets/svg/mute.svg);
 }
 
 .header-item-shorttrack.toggle {
-    background-image: url(../assets/svg/mute.svg);
+    background-image: url(../assets/svg/volume.svg);
 }
 
 .main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 0;
+    padding: 40px 0;
     justify-content: center;
     height: 100%;
     position: relative;
@@ -120,28 +120,63 @@ body {
 }
 
 .main-player {
-    margin-top: 80px;
+    font-weight: bold;
+    margin: 50px 0 30px 0;
+}
+
+.main-reset {
+    font-family: inherit;
+    font-size: inherit;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid #000000;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.main-reset:active, .main-reset:focus {
+    outline: none;
+}
+
+.main-reset::-moz-focus-inner {
+    border: 0;
+}
+
+.main-reset:hover {
+    color: #f063dd;
+    border-color: #f063dd;
+
 }
 
 .main-message  {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 40%;
     height: 50%;
     background-color: #ffffff;
-    font-size: 70px;
-    text-transform: uppercase;
-    align-items: center;
-    justify-content: center;
 }
 
 .main-message.active {
     display: flex;
 }
 
+.main-winner {
+    font-size: 70px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
 .main-toggle-player {
     color:#f063dd;
-    padding-right: 30px;
+}
+
+.main-steps {
+    font-size: 40px;
 }
 
 .footer,
