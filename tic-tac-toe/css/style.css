@@ -147,7 +147,6 @@ body {
 .main-reset:hover {
     color: #f063dd;
     border-color: #f063dd;
-
 }
 
 .main-message  {
@@ -156,6 +155,7 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
+    top: 15%;
     width: 40%;
     height: 50%;
     background-color: #ffffff;

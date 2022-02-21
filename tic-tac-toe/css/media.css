@@ -1,16 +1,109 @@
-@media (max-width: 425px) {
+@media (min-width: 2225px) {
+    body {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 1360px) {
+    .main-message  {
+        width: 60%;
+    }
+}
+
+@media (max-width: 935px) {
+    .main-message  {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
     .header-title {
         font-size: 40px;
+    }    
+
+    .header-item {
+        width: 30px;
+        height: 30px;
     }
 
-    
+    .header-item-track {
+        background-size: 30px 30px
+    }
 
-    
+    .main {
+        padding: 50px 0;
+    }
 
+    .main-area {
+        width: 362px;
+        height: 362px;
+    }
+    
+    .main-cell {
+        width: 120px;
+        height: 120px;
+        font-size: 50px;
+    }
+
+    .main-message  {
+        width: 90%;
+        height: 40%;
+    }
+
+    .main-winner {
+        font-size: 50px;
+    }
+   
+    .main-steps {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .header-sound {
+        margin: 0;
+    }
+
+    .main {
+        padding: 50px 0;
+    }
+
+    .main-area {
+        width: 302px;
+        height: 302px;
+    }
+    
+    .main-cell {
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+    }
+    
     .footer {
         height: 200px;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-area {
+        width: 272px;
+        height: 272px;
+    }
+    
+    .main-cell {
+        width: 90px;
+        height: 90px;
     }
 }
